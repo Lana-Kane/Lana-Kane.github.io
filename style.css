@@ -696,18 +696,11 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* ---------- About page photo and flower banner ---------- */
 
-.about-photo {
-  aspect-ratio: 4/5;
-  overflow: hidden;
-  border: 1px solid var(--line);
-  padding: 12px;
-  background: var(--paper);
-}
+.about-photo { margin: 0; }
 .about-photo img {
+  display: block;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 25%;
+  height: auto;
 }
 
 .flower-banner { margin-top: 24px; }
@@ -776,13 +769,13 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 
 /* ---------- Photos on the home, services and contact pages (shown whole, never cropped) ---------- */
 
-.hero-photo {
-  margin: 0;
-  border: 1px solid var(--line);
-  padding: 18px;
-  background: var(--paper);
+.hero-photo { margin: 0; }
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  box-shadow: 0 28px 50px -30px rgba(38, 48, 28, 0.45);
 }
-.hero-photo img { display: block; width: 100%; height: auto; }
 
 .services-intro {
   display: grid;
@@ -799,4 +792,135 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 @media (max-width: 760px) {
   .services-intro { grid-template-columns: 1fr; gap: 32px; }
   .si-photo { max-width: 240px; }
+}
+
+
+/* ---------- Service tiles ---------- */
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 28px;
+}
+.tile {
+  grid-column: span 2;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  display: flex;
+  flex-direction: column;
+}
+.tile:nth-child(n+4) { grid-column: span 3; }
+.tile img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+.tile-body { padding: 26px 26px 30px; }
+.tile h3 { font-size: 1.3rem; margin-bottom: 10px; }
+.tile p { margin: 0; color: #4a5439; font-size: 0.95rem; }
+.tile .tile-best {
+  margin-top: 16px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  font-size: 0.88rem;
+  color: var(--forest);
+}
+.tile .tile-best span {
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-right: 8px;
+}
+
+@media (max-width: 880px) {
+  .tiles { grid-template-columns: 1fr 1fr; }
+  .tile, .tile:nth-child(n+4) { grid-column: span 1; }
+  .tile:last-child { grid-column: span 2; }
+}
+@media (max-width: 560px) {
+  .tiles { grid-template-columns: 1fr; }
+  .tile:last-child { grid-column: span 1; }
+}
+
+/* ---------- Portfolio: cover photos that open the full project ---------- */
+
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+.project-card {
+  position: relative;
+  display: block;
+  padding: 0;
+  border: 0;
+  background: var(--forest);
+  cursor: pointer;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  font: inherit;
+  text-align: left;
+  color: var(--cream);
+}
+.project-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+.project-card:hover img,
+.project-card:focus-visible img { transform: scale(1.04); }
+.project-card-label {
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  padding: 64px 24px 22px;
+  background: linear-gradient(to top, rgba(26, 34, 18, 0.85), rgba(26, 34, 18, 0));
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.pc-title { font-family: 'Fraunces', serif; font-size: 1.35rem; }
+.pc-more {
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.88;
+}
+@media (max-width: 620px) {
+  .project-grid { grid-template-columns: 1fr; }
+}
+
+.project-dialog {
+  border: 0;
+  padding: 0;
+  background: var(--cream);
+  color: var(--ink);
+  width: min(1100px, 94vw);
+  max-height: 92vh;
+  overflow: auto;
+}
+.project-dialog::backdrop { background: rgba(26, 34, 18, 0.78); }
+.pd-inner { position: relative; padding: 44px 44px 52px; }
+.pd-inner h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 14px; padding-right: 110px; }
+.pd-text { max-width: 64ch; color: #40492f; margin: 0 0 30px; }
+.pd-close {
+  position: absolute;
+  top: 18px; right: 18px;
+  padding: 9px 18px;
+  background: transparent;
+  border: 1px solid var(--ink);
+  color: var(--ink);
+  font: inherit;
+  font-size: 0.74rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.pd-close:hover { background: var(--ink); color: var(--cream); }
+@media (max-width: 560px) {
+  .pd-inner { padding: 64px 18px 32px; }
+  .pd-inner h2 { padding-right: 0; }
 }
