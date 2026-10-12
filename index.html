@@ -39,14 +39,16 @@
       <div>
         <span class="eyebrow">London &amp; Hertfordshire</span>
         <h1>Landscape Design<br>for gardens that <em>grow&nbsp;with</em> you.</h1>
-        <p class="hero-lede">I design and create outdoor spaces across London, Hertfordshire and the surrounding areas, from a single planting scheme to a complete garden transformation. Every garden is shaped around the person it is for.</p>
+        <p class="hero-lede">Beautifully considered gardens for homes across London, Hertfordshire and the surrounding areas. Whether you are starting with a blank space or reimagining one you already know, I design gardens that feel as good as they look and suit the way you live.</p>
         <div class="hero-cta">
           <a href="contact.html" class="btn">Start a project</a>
           <a href="portfolio.html" class="btn btn-ghost">See the work</a>
         </div>
       </div>
-      <figure class="hero-photo">
-        <img src="images/patio-seating.jpg" alt="A patio with wooden dining chairs and stone urns planted with flowers, in front of a leafy border">
+      <figure class="hero-video">
+        <video autoplay muted loop playsinline preload="metadata" poster="images/hero-poster.jpg" aria-label="A short film of the gardens I have created">
+          <source src="images/hero-video.mp4" type="video/mp4">
+        </video>
       </figure>
     </div>
   </section>
@@ -65,32 +67,42 @@
         <p>Every garden starts somewhere different: a blank plot, a tired lawn, or a single idea that needs shaping. I do all of this work myself.</p>
       </div>
 
-      <div class="grid-5">
-        <div class="service-card">
-          <span class="service-num">i.</span>
-          <h3>Garden Design</h3>
-          <p>A full design for your garden that balances how it looks with how you will actually use it.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">ii.</span>
-          <h3>Planting Plans</h3>
-          <p>I choose plants to suit your soil, your light and the care you want to give, and I plant them myself.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">iii.</span>
-          <h3>Drip Irrigation</h3>
-          <p>I plan and install systems that water your plants at the roots, using far less water than a hosepipe.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">iv.</span>
-          <h3>Hardscaping</h3>
-          <p>The paths, patios and structure that hold a garden together, built by me to match the design.</p>
-        </div>
-        <div class="service-card">
-          <span class="service-num">v.</span>
-          <h3>Consultations</h3>
-          <p>A visit to your garden for honest, practical advice when you need direction before anything else.</p>
-        </div>
+      <div class="tiles">
+        <article class="tile">
+          <img src="images/svc-garden-design.jpg" alt="A hand drawn garden design plan showing a patio, lawn, raised beds, greenhouse and planting">
+          <div class="tile-body">
+            <h3>Garden Design</h3>
+            <p>A full design for your garden that balances how it looks with how you will actually use it.</p>
+          </div>
+        </article>
+        <article class="tile">
+          <img src="images/svc-planting-plans.jpg" alt="Blue bellflowers growing among silvery lamb's ear leaves">
+          <div class="tile-body">
+            <h3>Planting Plans</h3>
+            <p>I choose plants to suit your soil, your light and the care you want to give, and I plant them myself.</p>
+          </div>
+        </article>
+        <article class="tile">
+          <img src="images/svc-drip-irrigation.jpg" alt="New garden beds with black drip irrigation lines laid across the soil">
+          <div class="tile-body">
+            <h3>Drip Irrigation</h3>
+            <p>I plan and install systems that water your plants at the roots, using far less water than a hosepipe.</p>
+          </div>
+        </article>
+        <article class="tile">
+          <img src="images/svc-hardscaping.jpg" alt="A curved paved path winding through the lawn beside raised beds and a greenhouse">
+          <div class="tile-body">
+            <h3>Hardscaping</h3>
+            <p>The paths, patios and structure that hold a garden together, built by me to match the design.</p>
+          </div>
+        </article>
+        <article class="tile">
+          <img src="images/svc-consultations.jpg" alt="A designer taking notes on a clipboard while talking with a client on a sofa">
+          <div class="tile-body">
+            <h3>Consultations</h3>
+            <p>A visit to your garden for honest, practical advice when you need direction before anything else.</p>
+          </div>
+        </article>
       </div>
       <div style="text-align:center; margin-top:40px;">
         <a href="services.html" class="btn btn-ghost">More about my services</a>
@@ -100,8 +112,8 @@
 
   <section class="band">
     <div class="wrap about-grid">
-      <div class="about-portrait" aria-hidden="true">
-        <img src="images/logo.png" alt="">
+      <div class="about-photo">
+        <img src="images/portfolio-bed-established.jpg" alt="A rendered raised bed full of ferns, hostas and climbers beside the patio">
       </div>
       <div>
         <span class="eyebrow">London &amp; Hertfordshire</span>
@@ -119,6 +131,17 @@
       <a href="contact.html" class="btn" style="margin-top:28px; background:var(--cream); color:var(--ink); border-color:var(--cream);">Get in touch</a>
     </div>
   </section>
+
+<script>
+  (function () {
+    var v = document.querySelector(".hero-video video");
+    if (v && window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      v.removeAttribute("autoplay");
+      v.pause();
+      v.setAttribute("controls", "");
+    }
+  })();
+</script>
 
 </main>
 
