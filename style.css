@@ -598,3 +598,205 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
   outline: 2px solid var(--forest);
   outline-offset: 2px;
 }
+
+/* ---------- Services list (large numerals) ---------- */
+
+.service-list { display: flex; flex-direction: column; }
+
+.service-item {
+  display: grid;
+  grid-template-columns: 110px 1fr;
+  gap: 28px;
+  padding: 48px 0;
+  border-top: 1px solid var(--line);
+}
+.service-item:last-child { border-bottom: 1px solid var(--line); }
+
+.service-item .num {
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--sage);
+}
+
+.service-item h3 { font-size: 1.7rem; margin-bottom: 14px; }
+.service-item p { margin: 0; color: #4a5439; max-width: 62ch; }
+
+.service-item .best-for {
+  margin-top: 18px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  font-size: 0.92rem;
+  color: var(--forest);
+}
+.service-item .best-for span {
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-right: 8px;
+}
+
+@media (max-width: 640px) {
+  .service-item { grid-template-columns: 1fr; gap: 10px; }
+}
+
+/* ---------- Two panel blocks ---------- */
+
+.duo {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+  max-width: 860px;
+  margin: 0 auto;
+}
+.duo-panel { background: var(--cream); padding: 40px 34px; }
+.band .duo-panel { background: var(--paper); }
+.duo-panel h3 { font-size: 1.25rem; margin-bottom: 12px; }
+.duo-panel p { margin: 0; color: #4a5439; }
+
+.about-closing {
+  text-align: center;
+  margin: 44px auto 0;
+  font-family: 'Fraunces', serif;
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  color: var(--forest);
+  max-width: 34ch;
+}
+
+@media (max-width: 640px) {
+  .duo { grid-template-columns: 1fr; }
+}
+
+/* ---------- Five card service grid (3 over 2) ---------- */
+
+.grid-5 {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1px;
+  background: var(--line);
+  border: 1px solid var(--line);
+}
+.grid-5 .service-card:nth-child(-n+3) { grid-column: span 2; }
+.grid-5 .service-card:nth-child(n+4) { grid-column: span 3; }
+
+@media (max-width: 880px) {
+  .grid-5 { grid-template-columns: 1fr 1fr; }
+  .grid-5 .service-card:nth-child(n) { grid-column: span 1; }
+  .grid-5 .service-card:last-child { grid-column: span 2; }
+}
+@media (max-width: 560px) {
+  .grid-5 { grid-template-columns: 1fr; }
+  .grid-5 .service-card:last-child { grid-column: span 1; }
+}
+
+/* ---------- About page photo and flower banner ---------- */
+
+.about-photo {
+  aspect-ratio: 4/5;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  padding: 12px;
+  background: var(--paper);
+}
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 25%;
+}
+
+.flower-banner { margin-top: 24px; }
+.flower-banner img {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 38vw, 440px);
+  object-fit: cover;
+  object-position: 50% 50%;
+}
+
+/* ---------- Before and after feature (full, uncropped photos) ---------- */
+
+.ba { margin-bottom: 72px; }
+
+.ba-head { margin-bottom: 22px; }
+.ba-head h2 { font-size: clamp(1.5rem, 2.8vw, 2rem); }
+
+.ba-pair {
+  display: flex;
+  gap: 22px;
+  align-items: flex-start;
+}
+
+/* each photo's width/height ratio is set as --r so both photos end up the same height */
+.ba-fig {
+  flex: var(--r, 1) 1 0;
+  margin: 0;
+  position: relative;
+  min-width: 0;
+}
+.ba-fig img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.ba-fig figcaption {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  padding: 7px 14px;
+  background: var(--cream);
+  color: var(--ink);
+  font-size: 0.72rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 560px) {
+  .ba-pair { flex-direction: column; }
+  .ba-fig { flex: none; width: 100%; }
+}
+
+/* ---------- Single project feature (full, uncropped photo) ---------- */
+
+.project { margin-bottom: 72px; }
+.project:last-child { margin-bottom: 0; }
+.project img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* second row of photos within one project */
+.ba-pair + .ba-pair { margin-top: 22px; }
+
+/* ---------- Photos on the home, services and contact pages (shown whole, never cropped) ---------- */
+
+.hero-photo {
+  margin: 0;
+  border: 1px solid var(--line);
+  padding: 18px;
+  background: var(--paper);
+}
+.hero-photo img { display: block; width: 100%; height: auto; }
+
+.services-intro {
+  display: grid;
+  grid-template-columns: 1fr 270px;
+  gap: 56px;
+  align-items: end;
+}
+.si-photo { margin: 0; }
+.si-photo img { display: block; width: 100%; height: auto; }
+
+.contact-photo { margin: 36px 0 0; max-width: 360px; }
+.contact-photo img { display: block; width: 100%; height: auto; }
+
+@media (max-width: 760px) {
+  .services-intro { grid-template-columns: 1fr; gap: 32px; }
+  .si-photo { max-width: 240px; }
+}
