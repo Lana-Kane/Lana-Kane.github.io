@@ -7,6 +7,19 @@
 <meta name="description" content="About the landscape designer behind Lana Kane Designs: a passion for plants, outdoor spaces and gardens made around the person they are for.">
 <link rel="icon" href="images/logo.png">
 <link rel="stylesheet" href="style.css">
+<style>
+  .ab-block { display: grid; grid-template-columns: 5fr 7fr; gap: 64px; align-items: center; }
+  .ab-block.flip { grid-template-columns: 1fr 1.1fr; }
+  .ab-block + .ab-block { margin-top: 88px; }
+  .ab-fig { margin: 0; padding: 0; border: 0; background: none; }
+  .ab-fig img { display: block; width: 100%; height: auto; }
+  .ab-text p { margin: 18px 0 0; color: #4a5439; }
+  .ab-lead { font-family: 'Fraunces', serif; font-style: italic; font-weight: 400; font-size: clamp(1.4rem, 2.4vw, 1.85rem); line-height: 1.4; color: #3E4A2E; margin: 0 0 4px; }
+  @media (max-width: 760px) {
+    .ab-block, .ab-block.flip { grid-template-columns: 1fr; gap: 28px; }
+    .ab-block + .ab-block { margin-top: 56px; }
+  }
+</style>
 </head>
 <body>
 
@@ -34,23 +47,31 @@
 <main>
 
   <section style="padding-top:64px;">
-    <div class="wrap about-grid">
-      <div class="about-photos">
-        <figure class="about-photo">
+    <div class="wrap">
+
+      <div class="ab-block">
+        <figure class="ab-fig">
           <img src="images/about-portrait.jpg" alt="Portrait of the landscape designer smiling">
         </figure>
-        <figure class="about-photo">
+        <div class="ab-text">
+          <span class="eyebrow">About me</span>
+          <h1 style="font-family:'Fraunces',serif; font-weight:500; font-size:clamp(2rem,3.6vw,2.8rem); margin-top:12px;">Gardens are where I am happiest.</h1>
+          <p>I have always been happiest outside. When I am not working on a garden, I am usually in my own, with my hands in the soil. And when my hands are clean, you will find me looking out at it, either admiring the beauty of nature or, more likely, already thinking about the next project.</p>
+          <p>Plants are my real passion. I love learning about them: what grows well where, what thrives in shade or in full sun, what looks beautiful together, and what will still look good years from now. Knowing what works in which space is what turns a lovely idea into a garden that lasts.</p>
+        </div>
+      </div>
+
+      <div class="ab-block flip">
+        <div class="ab-text">
+          <p class="ab-lead">What I love most is making outdoor spaces feel like rooms.</p>
+          <p>Places with their own atmosphere, where people feel comfortable and want to spend time. I want every garden I make to be a thing of beauty and to be practical too, because a garden that looks lovely but does not suit how you live will never get used.</p>
+          <p>That is why no two of my gardens are the same. Each one is shaped around the person it is for: how you use the space, how much maintenance you are happy to take on, and how you want to feel when you step outside.</p>
+        </div>
+        <figure class="ab-fig">
           <img src="images/about-planting.jpg" alt="The landscape designer planting a border by hand, with a drip irrigation line laid across the soil">
         </figure>
       </div>
-      <div>
-        <span class="eyebrow">About me</span>
-        <h1 style="font-family:'Fraunces',serif; font-weight:500; font-size:clamp(2rem,3.6vw,2.8rem); margin-top:12px;">Gardens are where I am happiest.</h1>
-        <p style="margin-top:20px; color:#4a5439;">I have always been happiest outside. When I am not working on a garden, I am usually in my own, with my hands in the soil. And when my hands are clean, you will find me looking out at it, either admiring the beauty of nature or, more likely, already thinking about the next project.</p>
-        <p style="margin-top:16px; color:#4a5439;">Plants are my real passion. I love learning about them: what grows well where, what thrives in shade or in full sun, what looks beautiful together, and what will still look good years from now. Knowing what works in which space is what turns a lovely idea into a garden that lasts.</p>
-        <p style="margin-top:16px; color:#4a5439;">What I love most is making outdoor spaces feel like rooms. Places with their own atmosphere, where people feel comfortable and want to spend time. I want every garden I make to be a thing of beauty and to be practical too, because a garden that looks lovely but does not suit how you live will never get used.</p>
-        <p style="margin-top:16px; color:#4a5439;">That is why no two of my gardens are the same. Each one is shaped around the person it is for: how you use the space, how much maintenance you are happy to take on, and how you want to feel when you step outside.</p>
-      </div>
+
     </div>
   </section>
 

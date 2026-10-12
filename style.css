@@ -931,7 +931,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 .hero-video video {
   display: block;
   width: 100%;
-  max-width: 320px;
+  max-width: 210px;
   height: auto;
   aspect-ratio: 9 / 16;
   margin: 0 auto;
@@ -942,3 +942,8 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
 /* ---------- About page: two photos stacked in the left column ---------- */
 
 .about-photos { display: flex; flex-direction: column; gap: 22px; }
+
+/* smaller video sitting close to the intro text */
+@media (min-width: 561px) {
+  .hero-inner { grid-template-columns: minmax(0, 540px) auto; justify-content: start; gap: 72px; }
+}
