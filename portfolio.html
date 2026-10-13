@@ -205,5 +205,33 @@
   </div>
 </footer>
 
+<button type="button" class="to-top" id="to-top" aria-label="Back to the top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 19V5"/><path d="M5 12l7-7 7 7"/></svg>
+</button>
+<style>
+  .to-top { position: fixed; right: 20px; bottom: 20px; width: 46px; height: 46px; padding: 0; border-radius: 50%;
+    border: 1px solid rgba(243, 233, 222, 0.35); background: #3E4A2E; color: #F3E9DE; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    box-shadow: 0 6px 18px -6px rgba(38, 48, 28, 0.5);
+    opacity: 0; visibility: hidden; transform: translateY(8px);
+    transition: opacity 0.25s ease, transform 0.25s ease, visibility 0.25s ease; z-index: 50; }
+  .to-top.show { opacity: 1; visibility: visible; transform: none; }
+  .to-top:hover { background: #26301C; }
+  .to-top:focus-visible { outline: 2px solid #3E4A2E; outline-offset: 3px; }
+  .to-top svg { width: 20px; height: 20px; }
+  @media (max-width: 560px) { .to-top { right: 14px; bottom: 14px; width: 42px; height: 42px; } }
+</style>
+<script>
+  (function () {
+    var btn = document.getElementById("to-top");
+    if (!btn) return;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function toggle() { btn.classList.toggle("show", (window.pageYOffset || document.documentElement.scrollTop) > 250); }
+    window.addEventListener("scroll", toggle, { passive: true });
+    toggle();
+    btn.addEventListener("click", function () { window.scrollTo({ top: 0, behavior: reduce ? "auto" : "smooth" }); });
+  })();
+</script>
+
 </body>
 </html>
