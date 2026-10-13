@@ -7,6 +7,23 @@
 <meta name="description" content="Get in touch about landscape design across London, Hertfordshire and the surrounding areas.">
 <link rel="icon" href="images/logo.png">
 <link rel="stylesheet" href="style.css">
+<style>
+  /* phones in portrait only; desktop and tablet are not affected */
+  @media (max-width: 560px) {
+    .tiles { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .tile-body { padding: 14px 12px 16px; }
+    .tile h3 { font-size: 1.02rem; line-height: 1.25; margin-bottom: 6px; }
+    .tile p { font-size: 0.8rem; line-height: 1.5; }
+    .tile .tile-best { margin-top: 10px; padding-top: 8px; font-size: 0.74rem; line-height: 1.45; }
+    .tile .tile-best span { display: block; margin: 0 0 2px; font-size: 0.6rem; }
+  }
+  @media (max-width: 620px) {
+    .project-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
+    .project-card-label { padding: 28px 9px 9px; gap: 2px; }
+    .pc-title { font-size: 0.8rem; line-height: 1.2; }
+    .pc-more { font-size: 0.5rem; letter-spacing: 0.08em; }
+  }
+</style>
 </head>
 <body>
 
